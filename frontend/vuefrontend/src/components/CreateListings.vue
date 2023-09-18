@@ -28,6 +28,7 @@ export default {
             postData: {
                 title: "",
                 body: "",
+                username: sessionStorage.getItem('username')
             },
         };
     },

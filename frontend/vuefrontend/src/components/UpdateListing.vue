@@ -21,6 +21,7 @@
 </template>
 
 <script>
+// convert to composition api
 import axios from "axios";
 
 export default {
@@ -29,6 +30,7 @@ export default {
             postData: {
                 title: "",
                 body: "",
+                username: sessionStorage.getItem('username')
             },
         };
     },

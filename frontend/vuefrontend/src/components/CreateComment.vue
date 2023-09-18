@@ -12,6 +12,7 @@
 </template>
 
 <script>
+// change to composition api
 import axios from "axios";
 
 export default {
@@ -20,12 +21,14 @@ export default {
             postData: {
                 postid: this.$route.params.id,
                 content: "",
+                username: sessionStorage.getItem('username')
             },
         };
     },
     methods: {
         createComment() {
             axios
+            // i dont know how to add the id to the route in composition api
                 .post("http://localhost:3000/api/posts/comment/"+ this.$route.params.id, this.postData)
                 .then((response) => console.log(response))
                 .then(location.href="/view/"+this.$route.params.id);

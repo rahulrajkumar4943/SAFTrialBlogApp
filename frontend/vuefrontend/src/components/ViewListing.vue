@@ -1,6 +1,7 @@
 <template>
   <!-- view the listing -->
     <div v-for="post in posts" :key="post.id">
+        <p>{{ post.username }}</p>
         <h1>{{ post.title }}</h1>
         {{ post.body }}
         <br /><br><br>
@@ -20,6 +21,8 @@
   <!-- {{ comments }} -->
   <div v-for="comment in comments" :key="comment.id">
     {{ comment.content }}
+    <br>
+    {{ comment.username }}
     <br><br>
 
   </div>
