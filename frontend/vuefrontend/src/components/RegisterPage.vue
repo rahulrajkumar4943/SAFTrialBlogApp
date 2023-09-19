@@ -37,6 +37,7 @@ const sendLoginDetails = () => {
             console.log(response);
 
         });
+        window.location.href="/login"
 
     // console.log(this.postData.username);
 };

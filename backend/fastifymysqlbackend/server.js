@@ -42,7 +42,8 @@ fastify.post("/api/posts", function (req, reply) {
     // {
     //     title: 'this is a test title post',
     //     body: 'this is a test title body',
-    //     username: lazyboy
+    //     username: lazyboy,
+    //     imgurl: https://...
     // }
     fastify.mysql.query(
         "INSERT INTO posts SET ?",

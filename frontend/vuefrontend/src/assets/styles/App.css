@@ -1,8 +1,97 @@
-div {
-    background-color: aqua;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-button {
+
+/* button {
     padding: 5px;
     margin: 10px;
+} */
+
+body {
+    /* body is the whole screen even through it is */
+    /* not defined in App.vue */
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+.logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #000;
+    margin-left: 20px;
+}
+
+.navbar {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    padding-right: 30px;
+    box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.1);
+    height: 75px;
+}
+.navbarlinks {
+    margin-left: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* V remove that space under the links V */
+    /* thank u css master */
+    /* line-height: 0px; */
+}
+
+.navbarlink {
+    text-decoration: none;
+    /* text-align: center; */
+    /* display: inline; */
+    color: #000;
+    margin-right: 15px;
+    height: 100%;
+}
+
+.navbarusername {
+    margin-right: 15px;
+}
+
+
+/* make the button look like the other links */
+.loginoutbutton {
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Poppins';
+    cursor: pointer;
+    font-size: medium;
+}
+
+/* make a moving underline at the bottom of the text */
+.navbarlink, .navbarusername, .loginoutbutton {
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navbarlink:before, .navbarusername:before, .loginoutbutton:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: 0.2s ease-in-out;
+}
+
+.navbarlink:hover::before, .navbarusername:hover::before, .loginoutbutton:hover::before {
+    width: 100%; 
+}
+
+.navbarlink:hover::after, .navbarusername:hover::after, .loginoutbutton:hover::after {
+    width: 0;
+    left: 100%; 
+}
+
+.routerview {
+    margin: 10px;
+    
 }

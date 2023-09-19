@@ -1,32 +1,57 @@
 <template>
-    <div v-if="isProfileEnabled">
-        <div><p>Username:</p></div>
-        hi {{ username }}
-    </div>
     <!-- navbar -->
-    <p>Choose what part of this page you want to see:</p>
-    <!-- links to view and create listings pages V -->
-    <router-link to="/view">View Listings</router-link>
-    <br />
-    <router-link to="/create">Create Listings</router-link><br />
-    <br />
-    <div v-if="isProfileEnabled">
-        <button onclick="sessionStorage.clear(); location.href='/view'">
-            Logout
-        </button>
-    </div>
-    <div v-if="!isProfileEnabled">
-        <button onclick="location.href='/login'">Login</button>
+    <!-- the navbar is in app.vue because this template is always loaded -->
+    <!-- the other templates are loaded uner the <router-view /> tag -->
+    <div class="navbar">
+        <router-link to="/view" class="logo" onclick="">Blog App</router-link>
+        <!-- links to view and create listings pages V -->
+
+        <div class="navbarlinks">
+            <router-link to="/view" class="navbarlink">View Listings</router-link>
+            <br />
+            <router-link to="/create" class="navbarlink">Create Listings</router-link>
+            <br />
+            <br />
+        </div>
+
+        <div v-if="isProfileEnabled" class="navbarusername">
+            {{ username }}
+        </div>
+
+        <div class="loginout">
+            <!-- log in and log out buttons -->
+            <div v-if="isProfileEnabled">
+
+                <!-- check if the user is logged in or out but checking if the session exists -->
+                <!-- if the session exists then the user is logged in -->
+                <!-- only show the log out button if the user is logged in -->
+                <button onclick="sessionStorage.clear(); location.href='/view'" class="loginoutbutton">
+                    Logout
+                </button>
+
+
+
+            </div>
+            <!-- only show the log in button if the user is logged out -->
+            <div v-if="!isProfileEnabled">
+                <button onclick="location.href='/login'" class="loginoutbutton">Login</button >
+            </div>
+        </div>
+
     </div>
 
-    <hr />
+    <!-- <hr /> -->
 
+    <br>
     <!-- the page returned from the links in the navbar V -->
-    <router-view />
+    <div class="routerview">
+        <router-view />
+    </div>
 </template>
 
 <script setup>
 import { onBeforeMount, ref } from "vue";
+
 
 // export default {
 //     data() {
@@ -56,5 +81,5 @@ onBeforeMount(() => {
 </script>
 
 <style scoped>
-@import './assets/styles/App.css'
+@import "./assets/styles/App.css";
 </style>

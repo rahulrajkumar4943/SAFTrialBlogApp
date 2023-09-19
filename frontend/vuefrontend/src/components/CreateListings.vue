@@ -14,6 +14,11 @@
                     v-model="postData.body"
                 ></textarea>
             </div>
+            <div>
+                
+                <label for="imgurl">Enter your image url: </label>
+                <input type="url" id="imgurl" v-model="postData.imgurl" />
+            </div>            
             <button>Create Post</button>
         </form>
     </section>
@@ -28,7 +33,8 @@ export default {
             postData: {
                 title: "",
                 body: "",
-                username: sessionStorage.getItem('username')
+                username: sessionStorage.getItem('username'),
+                imgurl: ""
             },
         };
     },
