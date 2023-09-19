@@ -1,12 +1,14 @@
 <template>
     <section>
+    <center>
         <form @submit.prevent="createPost">
             <div>
-                <label for="title">Title: </label>
+                <label for="title">Title: </label><br>
                 <input type="text" id="title" v-model="postData.title" />
             </div>
+            <br>
             <div>
-                <label for="body">Body: </label>
+                <label for="body">Body: </label><br>
                 <textarea
                     id="body"
                     rows="6"
@@ -14,13 +16,16 @@
                     v-model="postData.body"
                 ></textarea>
             </div>
+            <br>
             <div>
                 
-                <label for="imgurl">Enter your image url: </label>
+                <label for="imgurl">Enter your image url: </label><br>
                 <input type="url" id="imgurl" v-model="postData.imgurl" />
-            </div>            
-            <button>Create Post</button>
+            </div>      
+            <br>      
+            <button class="button">Create Post</button>
         </form>
+    </center>
     </section>
 </template>
 
@@ -48,3 +53,8 @@ export default {
     },
 };
 </script>
+
+
+<style scoped>
+@import "../assets/styles/FormPages.css";
+</style>

@@ -1,5 +1,6 @@
 <template>
     <section>
+    <center>
         <form @submit.prevent="createPost">
             <!-- Update post with id {{ $route.params.id }} -->
             <div>
@@ -15,8 +16,9 @@
                     v-model="postData.body"
                 ></textarea>
             </div>
-            <button>Update Post</button>
+            <button class="button">Update Post</button>
         </form>
+    </center>
     </section>
 </template>
 
@@ -45,3 +47,7 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+@import "../assets/styles/FormPages.css";
+</style>

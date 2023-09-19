@@ -1,0 +1,21 @@
+section {
+   /* background-color: blue; */
+}
+
+section input {
+   border-width: 0 0 2px;
+}
+
+button {
+   letter-spacing: normal;
+   border: none;
+   background: none;
+   font-size: medium;
+}
+
+.button:hover {
+   letter-spacing: 2px;
+   transition: 0.2s;
+   font-size: large;
+}
+

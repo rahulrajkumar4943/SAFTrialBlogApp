@@ -1,20 +1,23 @@
 <template>
     <section>
+    <center>
         <!-- on submit run this method -->
         <form @submit.prevent="sendLoginDetails()">
             <div>
-                <label for="username">Username:</label>
+                <label for="username">Username:</label><br>
                 <!-- the v-model connects to the composition api variables before they are sent to the backend -->
                 <input type="text" id="username" v-model="username" />
             </div>
             <div>
-                <label for="passcode">Password: </label>
+                <label for="passcode">Password: </label><br>
                 <input type="text" id="passcode" v-model="passcode" />
             </div>
-            <button>Login</button>
+            <br>
+            <button class="button">Login</button>
 
         </form>
         <a href="/register">Register instead</a>
+    </center>
     </section>
 </template>
 
@@ -86,3 +89,7 @@ const sendLoginDetails = () => {
 //     },
 // };
 </script>
+
+<style scoped>
+@import "../assets/styles/FormPages.css";
+</style>

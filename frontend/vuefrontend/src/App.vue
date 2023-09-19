@@ -1,3 +1,4 @@
+
 <template>
     <!-- navbar -->
     <!-- the navbar is in app.vue because this template is always loaded -->
@@ -38,6 +39,14 @@
             </div>
         </div>
 
+        <!-- hamburger menu icon -->
+        <div class="hamburgericons">
+            <div onclick="window.location.href='/hamburger'" id="hamburger">
+                <img src="https://assets.stickpng.com/thumbs/588a6507d06f6719692a2d15.png" class="openhamburgericon">
+            </div>
+        </div>
+
+
     </div>
 
     <!-- <hr /> -->
@@ -50,7 +59,7 @@
 </template>
 
 <script setup>
-import { onBeforeMount, ref } from "vue";
+import { onBeforeMount, onMounted, ref } from "vue";
 
 
 // export default {
@@ -78,6 +87,17 @@ onBeforeMount(() => {
 //       })
 //       console.log(sessionStorage.getItem('username'));
 // }
+onMounted(() => {
+    if ((document.URL) == "http://localhost:8080/hamburger") {
+        document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/view'" );
+        console.log('athamburger');
+    } else {
+        document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/hamburger'" );
+        console.log('atview');
+
+    }
+})
+
 </script>
 
 <style scoped>

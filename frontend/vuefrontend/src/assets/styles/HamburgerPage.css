@@ -1,0 +1,18 @@
+
+
+/* no need to specify that the width is less than 600 */
+/* because this page will only be access on thin screens */
+/* like phones */
+/* that specification was made in app.css */
+/* nvmd i need to specify it because this affects app.vue */
+
+
+
+@media (max-width: 600px) {
+    .openhamburgericon{
+        display: block;
+        padding-top: 0;
+        /* because on this page there is no extra height */
+        /* idk why */
+    }
+}

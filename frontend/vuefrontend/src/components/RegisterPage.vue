@@ -1,21 +1,29 @@
 <template>
     <section>
+        <center>
         <form @submit.prevent="sendLoginDetails()">
             <div>
                 <label for="email">Email: </label>
-                <input type="text" id="email" v-model="email" />
+                <br>
+                <!-- use pattern attribut to add regex and make sure its an email -->
+                <input type="text" id="email" v-model="email" required pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" title="Enter a valid email" >
             </div>
+            <br>
             <div>
                 <label for="username">Username:</label>
-                <input type="text" id="username" v-model="username" />
+                <br>
+                <input type="text" id="username" v-model="username" required/>
             </div>
+            <br>
             <div>
                 <label for="passcode">Password: </label>
-                <input type="text" id="passcode" v-model="passcode" />
+                <br>
+                <input type="text" id="passcode" v-model="passcode" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number">
             </div>
-            <button>Register</button>
-            
+            <br>
+            <button class="button">Submit</button>            
         </form>
+    </center>
     </section>
 </template>
 
@@ -74,3 +82,8 @@ const sendLoginDetails = () => {
 //     },
 // };
 </script>
+
+
+<style scoped>
+@import "../assets/styles/FormPages.css";
+</style>

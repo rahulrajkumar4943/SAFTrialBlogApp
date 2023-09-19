@@ -1,13 +1,15 @@
 <template>
     <section>
+        <center>
         <form @submit.prevent="createComment">
             <div>
                 <label for="comment">Comment: </label>
                 <input type="text" id="comment" v-model="postData.content" />
             </div>
 
-            <button>Comment</button>
+            <button class="button">Comment</button>
         </form>
+    </center>
     </section>
 </template>
 
@@ -36,3 +38,8 @@ export default {
     },
 };
 </script>
+
+
+<style scoped>
+@import "../assets/styles/FormPages.css";
+</style>

@@ -6,6 +6,7 @@ import UpdateListing from '../components/UpdateListing.vue'
 import CreateComment from '../components/CreateComment.vue'
 import LoginPage from '../components/LoginPage.vue'
 import RegisterPage from '../components/RegisterPage.vue'
+import HamburgerPage from '../components/HamburgerPage.vue'
 
 const routes = [
     { path: '/view', name: 'ViewListings', component: ViewListings },
@@ -16,6 +17,7 @@ const routes = [
     { path: '/comment/:id', name: 'CreateComment', component: CreateComment },
     { path: '/login', name: 'LoginPage', component: LoginPage },
     { path: '/register', name: 'RegisterPage', component: RegisterPage },
+    { path: '/hamburger', name: 'HamburgerPage', component: HamburgerPage },
 
 ]
 

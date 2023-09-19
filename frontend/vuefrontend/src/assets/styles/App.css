@@ -95,3 +95,41 @@ body {
     margin: 10px;
     
 }
+
+.openhamburgericon, .closehamburgericon {
+    height: 30px;
+    padding-top: 3.2px;
+    /* padding top because the div that these icons are */
+    /* in is 6.4px taller. divide that by 2 to center the */
+    /* icons */
+    margin-left: 10px;
+    display: none;
+    /* by default both the hamburgers are not displayed */
+
+}
+
+
+.hamburgericons {
+    position: relative;
+    align-items: center;
+}
+
+
+
+/* if the width of the screen is less than 600px */
+@media (max-width: 600px) {
+    /* then by default show the option to open the menu */
+    /* the option to close the menu can be shown manually */
+    /* in other pages */
+    .openhamburgericon{
+        display: block;
+    }
+    .navbarlink, .navbarusername, .loginoutbutton {
+        /* dont display the other options when the screen is thin */
+        display: none;
+    }
+}
+
+.closehamburgericon {
+    display: none;
+}
