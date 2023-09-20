@@ -1,6 +1,7 @@
 <template>
     <section>
     <center>
+        <br>
         <form @submit.prevent="createPost">
             <div>
                 <label for="title">Title: </label><br>

@@ -1,5 +1,6 @@
 <template>
     <section>
+        <br>
         <center>
         <form @submit.prevent="createComment">
             <div>
@@ -7,7 +8,9 @@
                 <input type="text" id="comment" v-model="postData.content" />
             </div>
 
-            <button class="button">Comment</button>
+            <br>
+            <br>
+            <button class="button">Submit Comment</button>
         </form>
     </center>
     </section>

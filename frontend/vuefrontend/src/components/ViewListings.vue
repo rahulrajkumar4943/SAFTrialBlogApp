@@ -2,18 +2,19 @@
   <div class="heading">
 
     <p>Must Read:</p>
-
+    <br>
 
   </div>
     <div class="posts">
     <div v-for="post in posts" :key="post.id" class="post">
             <a v-bind:href="'/view/' + post.id" class="posttitle">
             {{post.title}}</a>
-            <br />
+            <div class="spacebetweenposttitleandpost"></div>
             <img :src="post.imgurl" class="blogpic"/>
             <br />
             <!-- {{ post.body }} -->
-            <br />
+            <div class="spacebetweenposttitleandpost"></div>
+            <br>
     </div>
   </div>
 </template>

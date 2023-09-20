@@ -35,3 +35,11 @@
     text-align: center;
     font-size:x-large;
 }
+
+body {
+    overflow: auto;
+}
+
+.spacebetweenposttitleandpost {
+    height: 10px;
+}

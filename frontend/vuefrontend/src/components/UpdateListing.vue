@@ -1,5 +1,6 @@
 <template>
     <section>
+        <br>
     <center>
         <form @submit.prevent="createPost">
             <!-- Update post with id {{ $route.params.id }} -->

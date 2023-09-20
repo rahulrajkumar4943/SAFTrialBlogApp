@@ -127,9 +127,14 @@ function togglehamburgermenu () {
   var x = document.getElementById("hamburgermenu");
   if (x.style.display === "block") {
     x.style.display = "none";
+    document.body.style.overflow='scroll'
+
   } else {
     x.style.display = "block";
+    document.body.style.overflow='hidden'
+
   }
+
 }
 
 // if (sessionStorage) {

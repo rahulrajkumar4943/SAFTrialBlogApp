@@ -11,18 +11,19 @@ body {
     /* not defined in App.vue */
     font-family: 'Poppins';
     margin: 0;
+    overflow: auto;
 }
 
 .hamburgermenu {
     display: none;
     /* the following code makes the hamburger menu not move with scroll */
     /* but the navbar still scrolls and that sucks */
-    
-    /* position: fixed;
+
+    position: fixed;
     margin-top: 50px;
     width: 100vw;
     height: 100vh;
-    background: #fff; */
+    background: #fff;
 }
 
 .logo {
@@ -144,7 +145,7 @@ body {
 
 
 /* if the width of the screen is less than 600px */
-@media (max-width: 1000px) {
+@media (max-width: 640px) {
     /* then by default show the option to open the menu */
     /* the option to close the menu can be shown manually */
     /* in other pages */
