@@ -18,6 +18,9 @@ const routes = [
     { path: '/login', name: 'LoginPage', component: LoginPage },
     { path: '/register', name: 'RegisterPage', component: RegisterPage },
     { path: '/hamburger', name: 'HamburgerPage', component: HamburgerPage },
+    // redirect the / to /view
+    { path: '/', redirect: '/view' },
+
 
 ]
 

@@ -41,11 +41,50 @@
 
         <!-- hamburger menu icon -->
         <div class="hamburgericons">
-            <div onclick="window.location.href='/hamburger'" id="hamburger">
-                <img src="https://assets.stickpng.com/thumbs/588a6507d06f6719692a2d15.png" class="openhamburgericon">
+            <div id="hamburger">
+                <img src="https://assets.stickpng.com/thumbs/588a6507d06f6719692a2d15.png" class="openhamburgericon" onclick="togglehamburgermenu()">
             </div>
         </div>
 
+
+    </div>
+
+    <div class="hamburgermenu" id = "hamburgermenu" style="display: none;">
+        <center>
+            <br>
+            <br>
+        <div class="hamburgerlinks">
+            <router-link to="/view" class="hamburgerlink" onclick="togglehamburgermenu()">View Listings</router-link>
+            <br /><br>
+            <router-link to="/create" class="hamburgerlink" onclick="togglehamburgermenu()">Create Listings</router-link>
+            <br /><br>
+        </div>
+        <div v-if="isProfileEnabled" class="hamburgerusername">
+            {{ username }}
+        </div>
+        <br>
+        <hr class="hraboveloginout">
+        <div class="hamburgerloginout" onclick="togglehamburgermenu()">
+            <!-- log in and log out buttons -->
+            <div v-if="isProfileEnabled">
+
+                <!-- check if the user is logged in or out but checking if the session exists -->
+                <!-- if the session exists then the user is logged in -->
+                <!-- only show the log out button if the user is logged in -->
+                <button onclick="sessionStorage.clear(); location.href='/view'" class="hamburgerloginoutbutton">
+                    Logout
+                </button>
+
+
+
+            </div>
+            <!-- only show the log in button if the user is logged out -->
+            <div v-if="!isProfileEnabled">
+                <button onclick="location.href='/login'" class="hamburgerloginoutbutton">Login</button >
+            </div>
+        </div>
+
+        </center>
 
     </div>
 
@@ -59,7 +98,8 @@
 </template>
 
 <script setup>
-import { onBeforeMount, onMounted, ref } from "vue";
+// eslint-disable-next-line no-unused-vars
+import { onBeforeMount, ref } from "vue";
 
 
 // export default {
@@ -71,6 +111,7 @@ import { onBeforeMount, onMounted, ref } from "vue";
 // };
 const username = ref("");
 const isProfileEnabled = ref(false);
+window.togglehamburgermenu = togglehamburgermenu;
 
 onBeforeMount(() => {
     username.value = sessionStorage.getItem("username");
@@ -80,6 +121,17 @@ onBeforeMount(() => {
     }
 });
 
+//toggle the hamburger menu
+// eslint-disable-next-line no-unused-vars
+function togglehamburgermenu () {
+  var x = document.getElementById("hamburgermenu");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 // if (sessionStorage) {
 //     onMounted(() => {
 //         // the DOM element will be assigned to the ref after initial render
@@ -87,16 +139,18 @@ onBeforeMount(() => {
 //       })
 //       console.log(sessionStorage.getItem('username'));
 // }
-onMounted(() => {
-    if ((document.URL) == "http://localhost:8080/hamburger") {
-        document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/view'" );
-        console.log('athamburger');
-    } else {
-        document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/hamburger'" );
-        console.log('atview');
 
-    }
-})
+// I used this when the hamburger menu was a seperate page
+// onMounted(() => {
+//     if ((document.URL) == "http://localhost:8080/hamburger") {
+//         document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/view'" );
+//         console.log('athamburger');
+//     } else {
+//         document.getElementById('hamburger').setAttribute( "onClick", "window.location.href='/hamburger'" );
+//         console.log('atview');
+
+//     }
+// })
 
 </script>
 

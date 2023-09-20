@@ -13,6 +13,18 @@ body {
     margin: 0;
 }
 
+.hamburgermenu {
+    display: none;
+    /* the following code makes the hamburger menu not move with scroll */
+    /* but the navbar still scrolls and that sucks */
+    
+    /* position: fixed;
+    margin-top: 50px;
+    width: 100vw;
+    height: 100vh;
+    background: #fff; */
+}
+
 .logo {
     text-transform: uppercase;
     text-decoration: none;
@@ -48,14 +60,25 @@ body {
     margin-right: 15px;
     height: 100%;
 }
+.hamburgerlink {
+    text-decoration: none;
+    /* text-align: center; */
+    /* display: inline; */
+    color: #000;
+    margin-top: 15px;
+    height: 100%;
+
+}
 
 .navbarusername {
     margin-right: 15px;
 }
 
 
+
+
 /* make the button look like the other links */
-.loginoutbutton {
+.loginoutbutton, .hamburgerloginoutbutton {
     background: none;
     border: none;
     padding: 0;
@@ -71,6 +94,8 @@ body {
     position: relative;
 }
 
+/* normally theres a background on the left with no width and a 2px height */
+/* on hover, that background transitions to the full with of the div / link */
 .navbarlink:before, .navbarusername:before, .loginoutbutton:before {
     content: "";
     position: absolute;
@@ -91,6 +116,7 @@ body {
     left: 100%; 
 }
 
+/* because its ugly when the text touches the side of the screen */
 .routerview {
     margin: 10px;
     
@@ -109,6 +135,7 @@ body {
 }
 
 
+
 .hamburgericons {
     position: relative;
     align-items: center;
@@ -117,7 +144,7 @@ body {
 
 
 /* if the width of the screen is less than 600px */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     /* then by default show the option to open the menu */
     /* the option to close the menu can be shown manually */
     /* in other pages */
@@ -132,4 +159,24 @@ body {
 
 .closehamburgericon {
     display: none;
+}
+
+.hamburgermenu {
+    font-size: large;
+    /* background: turquoise; */
+    height: 100vh;
+}
+
+.hamburgerloginout {
+    font-size: xx-large;
+    height: 100%;
+}
+
+.hamburgerloginoutbutton {
+    color: red;
+    font-size: large;
+}
+
+.hraboveloginout {
+    width: 75%;
 }
